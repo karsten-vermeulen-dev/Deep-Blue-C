@@ -154,8 +154,87 @@ if(braces == notLinedUp) {
 }
 ```
 
+## Comments
+These parts of the code assist programmers with understanding what the code does and are ignored by the compiler. Comments can span over a single line or take up multiple lines like so:
 
-	
+```cpp
+//This is a comment
+
+/* This is also a comment
+   that spans over multiple
+   lines */
+```
+
+Because comments are not compiled, they do not need a semicolon at the end. Although comments are good for explaining complex code and algorithms, do not overuse them or comment on the obvious. It would be best if you always aimed to write self-documenting code and name your variables and functions properly:
+
+```cpp
+void AddTwoNumbers(int number1, int number2)
+{
+    //Add the numbers...
+}
+```
+
+## The I/O stream
+When you look at the fundamental core entity of every game or application, some form of input and output is happening. For instance, players use keyboards, mice, or controllers to input data and have their screens, TVs or VR headsets display the graphics. Similarly, applications read data input via the keyboard or mouse and display graphical feedback through user interfaces, animations, or images to screens and headsets. In C++, we can achieve the same primary input/output but in a much simpler form (for now). We can use our keyboards to enter text data and the console screen we created earlier to display data. For this to work, we will make use of the input and output streams that come with the _Standard C++ Library_, which requires us to include a certain header file:
+
+```cpp
+#include <iostream>
+```
+
+Because we will be using functions and commands that belong to this C++ library, we will need to make use of the following namespace:
+
+```cpp
+std::
+```
+
+Don't worry too much about namespaces; we will cover them later.
+
+## The output stream
+To output to the console, we use the std::cout object and the insertion operator (<<), like so:
+
+```cpp
+std::cout << "Sending text to the console...";
+```
+
+Besides text, we can also print numeric values on the console window:
+
+```cpp
+//Output a positive whole number
+std::cout << 100;
+
+//Output a negative whole number
+std::cout << -25000;
+
+//Output a decimal number
+std::cout << 1.234;
+```
+
+Fancy living dangerously and mixing it up a little? Well, you can send multiple different entities to the output stream, such as string and numeric literals, as long as the insertion operator is used in between: 
+
+```cpp
+//Mixing string literals with whole numbers
+std::cout << "I am " << 100 << " years old!";
+
+//Mixing string literals with decimal numbers
+std::cout << "I weigh " << 45.7 << " kilos!";
+```
+
+The std::endl object is used to move to the following line. This has the same effect as hitting the enter key:
+
+```cpp
+std::cout << "This is one line of text" << std::endl;
+std::cout << "This is another...";
+```
+
+The above can also be achieved using the special newline character (\n):
+
+```cpp
+std::cout << "This is one line of text\nThis is another...";
+```
+
+The second method works just as well. However, it can make the code look messy and confusing.
+
+ 
 	
 	
 	
