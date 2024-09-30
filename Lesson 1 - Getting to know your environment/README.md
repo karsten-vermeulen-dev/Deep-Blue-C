@@ -40,10 +40,36 @@ Why not? It is a lucrative career and makes good money, too. But that shouldn’
 | OpenVR        | Developed by Valve and created using C, C++, and C#, this API allows developers to manipulate virtual reality devices in their applications   |
 | Qt            | Pronounced que tee or simply cute, this software development behemoth gives developers the power to create just about any (GUI) application that can run on just about any device   |
 
+## An introduction to Visual Studio
+Let us now take a look at one of the most popular IDEs.
+
+## What is this Visual Studio exactly?
+This is an integrated development environment, or IDE, developed by Microsoft. It is used for writing, compiling, and linking your C++ code. Of course, you can use it to code in other languages, and the IDE comes packed with many tools to make software development much more straightforward. The built-in IntelliSense will assist developers with syntax highlighting, code prediction and many different debugging tools to help find and fix issues in the code. We will only be using a small portion of Visual Studio's capabilities, which is why the Community 2022 edition is more than enough for our purposes.
 	
+## Where can I find Visual Studio? 
+Visual Studio comes in three flavours: Professional, Enterprise, and Community. The latter is free and can be downloaded here: https://www.visualstudio.com. Click on **Download Visual Studio** and select the **Community 2022 edition**. This will download a setup EXE file to run and install the IDE.
+
+## Managing the installation
+After installing Visual Studio, you can use the Visual Studio Installer to modify or update your installation. Search for this on your machine and run it. You can have multiple versions of Visual Studio installed side-by-side, which can be managed separately. Inside the _Visual Studio Installer_, click **Modify** in the Community 2022 box to make changes to your installation. Under the **Workloads** tab, select the **Desktop development with C++** box, which should provide you with all the bog-standard C++ tools you need. Click **Modify** in the screen's bottom right corner to apply these changes. If you wish to install specific components, click on the **Individual components** tab at the top of the installer. Here, you can install particular compilers, language extras, debugging tools, and plugins. Windows developers can also install specific Windows Software Development Kits (SDKs). You should have default SDKs selected for installation, but if you are after something specific, select it and any other components and click on Modify to install them. At the very least, you will require the C++ core features installed.
 	
+## Starting a new project
+Let us begin by doing the following:
+1. Start up Visual Studio and create a **New Project** 
+2. Select the **Empty Project** template and click **Next** 
+3. Give your project a name, choose the desired location for your solution folder and click **Create**
+
+You are now inside Visual Studio’s famous IDE. Take a good look around and admire the view. This will be your new home away from home. Once you are done viewing, add a source file to the project, which will be your main starting point for the application. To achieve this, right-click on the **Source Files** tab, select **Add** and then **New Item**. Now select the C++ File option and give the file a name, something as dull as _Main.cpp_.
+You can now add some start-up code to the Main.cpp file, however, do not worry too much about what it does just yet:
 	
-	
+```cpp
+#include <iostream>
+
+int main()
+{
+    system("pause");
+    return 0;
+}
+```	
 	
 	
 	
