@@ -23,6 +23,28 @@ Many game engines are either written in C++ or have some form of C++ under the h
 | Frostbite       | Known for producing the Battlefield series of games, Electronic Arts' baby is written in both C++ and C#                                               |
 | Godot           | Initially created by two Argentine developers, it was released to the public in 2014. The popular adventure game _Deponia_ was made using this engine  | 
   	
+## Tell me about this so-called games industry
+The gaming market is massive, globally worth over $100bn annually, with the UK games industry worth about £5bn. The UK has the 6th largest market in the world, following Germany, South Korea, Japan, USA, and China. You can choose to work for any studio, be that AAA, mid-level or indie, and within that realm, you can choose to develop many different kinds of games, namely desktop, console, mobile, online, AR, and VR. And within that, career paths are abundant, namely tools, physics, graphics, gameplay, audio, and AI.
+
+## Want to develop software instead?
+Why not? It is a lucrative career and makes good money, too. But that shouldn’t be your ultimate reason for entering the industry. Your passion for creating new cutting-edge software should drive you to pursue this career. In this field, you get the chance to develop applications rather than games, and as such, the software you create might not appear as exciting or dynamic as a game. You could develop applications such as audio plugins, database managers, banking apps, and medical and audio visualisers, to name a few. Much of the middleware that you use in the industry will most likely be written in C++.
+	
+## Some popular software APIs worth mentioning
+
+| API           | Description    |
+| ------------- | -------------- |
+| JUCE          | Short for _Jules' Utility Class Extensions_, this cross-platform C++ application framework allows developers to use C++ to create audio apps and plugins with a rich UI   |
+| OpenGL        | An ancient yet popular graphics API written in C that allows developers to harness the raw power of the GPU to create visual applications   |
+| wxWidgests    | Another C++ library that offers developers a widget toolkit to create GUI applications   |
+| wWise         | Another excellent tool for creating audio applications or to integrate audio into your existing application (or game)   |
+| OpenVR        | Developed by Valve and created using C, C++, and C#, this API allows developers to manipulate virtual reality devices in their applications   |
+| Qt            | Pronounced que tee or simply cute, this software development behemoth gives developers the power to create just about any (GUI) application that can run on just about any device   |
+
+	
+	
+	
+	
+	
 	
 	
 	
