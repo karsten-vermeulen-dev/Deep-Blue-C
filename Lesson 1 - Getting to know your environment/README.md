@@ -234,15 +234,30 @@ std::cout << "This is one line of text\nThis is another...";
 
 The second method works just as well. However, it can make the code look messy and confusing.
 
+## Escape sequences
+Now, the newline character is not the only special character out there. There are a few other special characters you can insert within the text, and these are known as escape sequences. To use one of these characters, you must precede them with a backslash character (\\), which tells the compiler that something special needs to be output, such as a new line or tab. This means that these characters will not be printed to the console but instead used to format the text. This particular formatted output would not otherwise be printable in any manner, hence why there are a few of these set aside:
  
-	
-	
-	
+| Escape sequence | Description    |
+| --------------- | -------------- | 
+| \a  | Create the default Windows sound   |
+| \n  | Go to the next line in the console window   |
+| \b  | Go back and erase one character in the text (backspace)   |
+| \t  | Move forward a few spaces (tab)   |
+| \\" | Print a quotation character in the text   |
+| \\\ | Print a backslash character in the text   |
 
+## The input stream
+To get input from the keyboard, we use the std::cin object, the extraction operator (>>), and a variable to store the data in:
 
-	
-	
-	
+```cpp
+int age;
+std::cin >> age;
+```
 
+You can also store multiple values by providing multiple variables in one line, separated by extraction operators:
 
-
+```cpp
+int age;
+float weight;
+std::cin >> age >> weight;
+```
