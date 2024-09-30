@@ -70,7 +70,97 @@ int main()
     return 0;
 }
 ```	
+
+## Compiling & running the project
+You now have a simple Visual Studio C++ project with a few lines of code ready for testing. Once you have written some code that makes sense, the source file can be compiled, and there are multiple ways to do this, namely: 
+1. Right-click the project name and select **Build**
+2. Click the **Build** button on the toolbar. If you do not see it, right-click the toolbar and select the Build option. If there are any errors when building your project, they will appear in the Output window below.
+
+Once your project has been built successfully, you can run it, and this is done as follows:
+1. Hit the **F5** key
+2. Click the **Run** button on the toolbar (it is the green play button)
+
+The above actions will also compile the project, if not already done, before running the application. When you run your newly created application, you should be greeted with a terminal/console window prompting you to press any key to continue.
+
+## Some cheap hacks for you
+
+| Shortcut            | Description    |
+| ------------------- | -------------- |
+| CTRL-D              | Duplicates a line of code   |
+| CTRL-KC             | After selecting a block of code, use this to comment out the entire segment   |
+| CTRL-KU             | You can also uncomment an entire segment of code using this shortcut   |
+| CTRL-KD             | Based on the formatting options set, this will format your code such that it is indented, aligned, and spaced out accordingly   |
+| ALT-UP/DOWN arrows  | Place the mouse cursor next to a line of code and use this shortcut to move the entire line up/down the page   |
+| TAB                 | Useful for auto-filling code segments such as loops, branches, switch statements, etc.   |
+| ALT-mouse drag      | This will allow you to select rectangular blocks of code   |
+
+## The main source
+Let us now use our brand-new application and write some meaningful code. We are going to continue using our trusty Main.cpp for this.
+
+## The _main()_ function
+This is the starting point of our program, which will execute all commands in order after pressing F5. It's a function that comprises a block of code between the curly braces {}and returns a value, in our case 0, when the program is done. The function _main()_ should always return an integer value, which could signify success or failure upon application termination. If the application was launched from within another program, this return value will be sent back to the operating system or the parent application. The main function may also take command line arguments, in which case it may look like this:  
+
+```cpp
+int main(int argc, char* argv[])
+```
+
+These arguments will receive values from the command line if that's how the application was launched, and the programmer will be able to use them accordingly. More on this later.
+
+## Statements
+These are all the commands in a program that tell the application what to do. They must all end with a semicolon (;). 
+
+```cpp
+system("pause");
+return 0;
+```
+
+Statements may also span over multiple lines, like so:
+
+```cpp
+<code example coming soon>
+```
+
+Alternatively, although not advised, you can put multiple statements in one line, as long as each one ends with a semicolon:
+
+```cpp
+left = right; system("pause"); return 0;
+```
+
+Grouped statements are called compound statements or blocks. They are usually placed within curly brackets ({}), and all statements have to end with a semicolon (;). No matter how much whitespace (spaces, tabs, or newlines) is present, the compiler reads an entire statement as one entity until it finds the semicolon.
+
+```cpp
+if (right == wrong)
+{
+    //The world will end!
+    SaveTheWorld();
+    return -1;
+}
+```
+
+Believe it or not, brace wars are a thing, and many developers will argue which method is better, i.e., lined up or such that the opening brace is on the same line as the opening statement. Ignore the heated discussions as to which is better. Choose the method you prefer and stick to that.
+
+```cpp
+if(braces == linedUp)
+{
+    //Happy days
+}
+```
+
+or...
+
+```cpp
+if(braces == notLinedUp) {
+    //Happy days 
+}
+```
+
+
 	
+	
+	
+	
+
+
 	
 	
 	
