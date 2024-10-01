@@ -1,6 +1,16 @@
 # Deep Blue C
 This repository is an introductory to intermediate-level C++ "course", complete with lessons, code samples, exercises, challenges, and small games. Each folder in the repo comprises the relevant lesson, source code and learning material. Are you ready to dive into the deep blue C?  
 
+## Building the source
+Whether you clone the repo or directly download the source code, you must generate a working project and environment out of the code and library files provided. You are advised to download and use [CMake](https://cmake.org) to do this. You may wish to use the CMake GUI app or build from the terminal, but whichever method you choose, the CMake source folder is the one you see above, with the _CMakeLists.txt_ file within. Generate the project files into the destination folder of your choice, even if that's the same folder as the source folder. In terms of preferred IDE, mine is the industry-standard [Visual Studio Community 2022](https://visualstudio.microsoft.com/downloads), and with that in mind, the rest of my documentation will reference this IDE only.
+
+## Compiling and running the engine
+
+Once CMake has created the build folder, open the solution via the **DeepBlueC.sln** file. Within Visual Studio, in the _Solution Explorer_, pick the project you want to build/run by right-clicking it and selecting **Set as Startup Project**. Now, build and run the project in either **Debug** or **Release** mode, which you can set in the toolbar above. 
+
+## Sponsor me
+If the lessons and code I create is useful to you, and you'd like for me to create tons more, then consider [sponsoring me](https://github.com/sponsors/karsten-vermeulen-dev).
+
 ## Overview
 
 ### Lesson 1: _Getting to know your environment_
