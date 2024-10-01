@@ -184,6 +184,97 @@ StructType myOwnStruct;
 
 Object types can also be data types that belong to an external library, such as the _Standard Library_, a popular example being the _std::string_ data type. Other types include _vectors_, _fstream_, _maps_, etc, which we will delve into later. With object types, we can usually perform operations on them, such as finding the length of a _std::string_ by using its `size()` member function. 
 
+## Structs
+
+In ye olde days of C, a collection of variables was grouped using something called a _struct_. This allowed related data to be self-contained within a particular entity. They are still in use today in C++ and behave almost the same as _classes_, with minor differences. One slight difference is that the members of a struct are `public` by default. Structs are great for grouping data without any other complexities. However, it’s always best to stick to classes as much as possible.
+
+A struct can be defined using variables such as built-in types, arrays or other object types:
+
+```cpp
+struct MyStruct
+{
+    int number;
+    float anotherNumber;
+    std::string name;
+};
+```
+
+Structs can be instantiated on stack space or heap space, just as previously demonstrated with regular variables:
+
+```cpp
+//create object on the stack
+MyStruct aStruct;
+//create object on the heap
+MyStruct* anotherStruct = new MyStruct;
+```
+
+Objects of a struct may also be instantiated right after defining the struct, like so:
+
+```cpp
+struct MyStruct
+{
+    int number;
+    float anotherNumber;
+    std::string name;
+} aStruct;
+```
+
+Alternatively, objects can be initialized straight away:
+
+```cpp
+MyStruct aStruct = { 100, 1.23f, "Frank" };
+```
+
+To access any member of a statically created struct, we can use the direct member operator (.) like so:
+
+```cpp
+aStruct.name = "John";
+aStruct.number = 100;
+aStruct.anotherNumber = 1.234f;
+```
+
+If the object lies on the heap, we would need to use the indirect member operator (->):
+
+```cpp
+anotherStruct->name = "Jack";
+anotherStruct->number = -200;
+anotherStruct->anotherNumber = -2.34f;
+```
+
+We will return to structs later in the course, leading us to discuss classes, so stay tuned or flip ahead to the OOP lessons. 
+
+## A very brief look at _std::string_
+
+Let's now look at the `std::string` data type and see how we can declare, initialize and store data in a variable of this type.
+
+```cpp
+#include <iostream>
+#include <string>
+
+int main()
+{
+    std::string name = "John Smith";
+    std::cout << "My name is " << name;
+}
+```
+
+Outputting the string data to the console is as simple as any other data type, but inputting is tricky. If we use `std::cin`, all whitespace is ignored if multiple words have spaces in between because only the first word is captured. To alleviate this problem, we could use multiple string variables and capture all words, like so:
+
+```cpp
+std::string firstName, lastName;
+std::cin >> firstName >> lastName;
+std::cout << "My full name is " << firstName << ' ' << lastName << std::endl;
+```
+
+The problem with the above method is that we need to know the number of strings we require and add manual spaces between them when displaying the name. This is very laborious. A much more preferred method is to use the `getline()` function, which works as follows:
+
+```cpp
+std::string fullName;
+std::getline(std::cin, fullName);
+std::cout << "My full name is " << fullName << std::endl;
+```
+
+The `getline()` function uses the `std::cin` stream object and the variable to store the string in, which in this case is `fullName`.
 	
  
 	
