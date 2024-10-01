@@ -130,6 +130,8 @@ So far, we have been demonstrating straightforward data types, also known as _fu
 | bool        | This holds two types of values, namely true or false                                |
 | char        | This contains only a single character or single digit number, such as A, x, 0 or 9  |
 
+The _char_ and _bool_ data types are numeric, meaning they store numeric values. The value stored inside a _char_ is the _ASCII_ code of the stored character. When storing _bool_ data, although we conventionally would store `true` or `false`, you can store any 8-bit number in the variable. Any non-zero number is interpreted as `true`, and storing a 0 would mean `false`.
+
 The above intrinsic data types may also be declared using type modifiers, which further specify how large or small that variable is or if the variable can also store positive and negative numbers. For instance, a `long long int` may use up more storage than a `short int` and thus may be assigned more values. An `unsigned int` cannot hold any negative numbers. See the table below to view them:
 
 | Modifier    | Description    |
@@ -139,8 +141,9 @@ The above intrinsic data types may also be declared using type modifiers, which 
 | signed      | Works only with int and char types and allows them to represent positive and negative numbers     |
 | unsigned    | Works only with int and char types and restricts them to only representing positive numbers       |
 
-For those of you who are curious as to how much storage each of these variables requires, as well as what range of values each variable can store, see the comprehensive table below:
+Because fundamental data types come built into the compiler, different compilers may represent them differently in memory. The type modifier may also be used without the data type to declare a variable. For instance, using `long` would be the same as `long int`. When using signed and unsigned modifiers, beware of integer wrap-around.
 
+For those of you who are curious as to how much storage each of these variables requires, as well as what range of values each variable can store, see the comprehensive table below:
 
 | Data type               | Size      | Range                                                   |
 | ----------------------- | --------- | ------------------------------------------------------- |
