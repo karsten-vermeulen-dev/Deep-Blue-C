@@ -296,6 +296,45 @@ ClassType* myOwnClass = &otherClass;
 std::unique_ptr<SomeType> smartPtr(new SomeType);
 ```
 
+## The scope of a variable
+
+Variables have a particular scope within which they are valid and can be used, and they can be classified as having _global_ or _local scope_. The scope of a variable is determined based on what block of code it is declared in, and when used outside of this block, the compiler will not recognise the variable, and errors will arise. Global variables have the broadest scope in a program and are accessible anywhere and everywhere. They are usually declared within header files or outside the `main()` function in _main.cpp_.
+
+```cpp
+int globalNumber = 999;
+char globalLetter = 'G';
+
+int main()
+{
+    //main stuff
+    //use global variables here
+}
+```
+
+Alternatively, variables with a local scope are local to a particular block of code and are only accessible within the units they were created within. They usually exist in functions or any other blocks of code surrounded by curly braces ({}), such as `if-else` statements or loops:
+
+```cpp
+for (int i = 0; i < 100; i++)
+{
+    //Do something with the local variable i
+}
+```
+
+Variables in different scopes are independent of each other and are allowed to share the same name. The variable in the inner-most scope takes precedence over the outer one. The code snippet below shows that the first declared `number` variable is local to the function and will cease to exist when the function ends. It has a different scope to the `number` variable declared within the `while` loop:
+
+```cpp
+void DoSomething()
+{
+    int number = -1234;
+
+    while (true)
+    {
+        int number = 1234;
+    }
+}
+```
+
+Remember to use global variables wisely and sparingly. It is best practise to keep variable declarations as local as possible because too many global variables will decrease the maintainability of an application and increase what is known as _coupling_. 
 
 	
 	
