@@ -1,9 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(Lesson_1)
-project(Calculator)
-project(Cinema)
-project(Algorithms)
+project(DeepBlueC)
 
 set(CMAKE_CXX_STANDARD 17)
 
