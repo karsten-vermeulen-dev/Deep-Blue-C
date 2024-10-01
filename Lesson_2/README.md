@@ -336,7 +336,117 @@ void DoSomething()
 
 Remember to use global variables wisely and sparingly. It is best practise to keep variable declarations as local as possible because too many global variables will decrease the maintainability of an application and increase what is known as _coupling_. 
 
-	
+## Constants
+
+Sometimes, you may want values to remain unchanged throughout the program. For this, we use _constants_. These special creatures are declared just like their friendly variable counterparts, except they use the keyword `const`, like so:
+
+```cpp
+const float gravity = 9.87f;
+const double Pi = 3.14159265359;
+```
+
+Using uppercase letters when naming constants (`GRAVITY`) has always been a standard convention. However, in modern times, this is starting to become debatable. You will find a plethora of code out there written in this manner, and there is nothing wrong with this. It depends on the coding standard, of course, but it’s generally not preferable. For starters, it's tedious to hold down the _Shift_ key when spelling constants, and for names with two or more words in them, such as `maximumBlastForce`, there is the dreaded underscore character you would need to insert to make it more readable, i.e., `MAXIMUM_BLAST_FORCE`. <br>
+Besides creating and using constants to prevent changes to a variable, they also provide other benefits, such as improving the code readability by removing the use of literal values, also known as _magic numbers_. Constants make the code easier to debug, meaning only one change is needed instead of many. We can also use a set of constants as an _enumeration_. <br>
+Constants need to be initialized, and from that point onward, their values cannot be altered, else the compiler will generate an error. Alternatively, another common method to ensure unchangeable values is using the preprocessor macro `#define`, which should be avoided in a modern C++ world if possible.
+ 
+## Enumerations
+
+This is a range of constant integer values, also known as _enumerators_, which allow us to create our own range of values by giving each enumerator a specific name. To create an enumeration, we do so using the enum keyword, like so:
+
+```cpp
+enum Directions
+{
+    North,
+    South,
+    East,
+    West
+};
+```
+
+Now, we can go ahead and create a variable of the type `Directions` and use it like any other:
+
+```cpp
+Directions myDirection = East;
+```
+
+The first enumerator will be 0 by default when we create enumerations. All subsequent values will be 1, 2, 3, etc. We can also explicitly set a value for the enumerators. 
+
+```cpp
+enum Directions
+{
+    North = 1,
+    South = 2,
+    East = 4,
+    West = 8
+};
+```
+
+Alternatively, only the first enumerator can be set, and the others will follow suit with incrementations of 1. 
+
+```cpp
+enum Directions
+{
+    North = 1,
+    South,
+    East,
+    West
+};
+```
+
+While the above enum definitions work fine, a more modern approach would be using an `enum class`. Consider the following enum definitions:
+
+```cpp
+enum Days
+{
+    Monday,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday,
+    Sunday
+};
+
+enum Directions
+{
+    North,
+    South,
+    East,
+    West
+};
+```
+
+Without an enum class in place, the enumerators can be used interchangeably, which leads to confusing logic in the code:
+
+```cpp
+Directions myDirection = North;
+
+if (myDirection == Monday)
+{
+    //This will run because North and Monday are 0
+}
+```
+
+To define an `enum class`, add the **class** keyword in the definition.
+
+```cpp
+enum class Directions
+{
+    North = 1,
+    South = 2,
+    East = 4,
+    West = 8
+};
+```
+
+Remember to ensure that the exact enum type is specified when assigning values.
+
+```cpp
+Days myDay = Days::Monday;
+Directions myDirection = Directions::North;
+```
+
+ 
 	
 	
 
