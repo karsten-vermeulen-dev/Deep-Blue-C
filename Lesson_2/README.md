@@ -77,4 +77,45 @@ int intNum{ floatNum };
 
 Brace initialization may also be termed _list_ or _uniform initialization_ and may not always be your desired solution. There are various (sometimes heated) discussions online about when, where, how, and why to use them. If you choose braces, stay consistent in your codebase unless it cannot be used in a particular situation. We will revert to **not** using brace initialization for the remainder of the lesson material.
 
+## Assigning values to variables
+
+Initializing variables only happens when declaring the variable and assigning it a value straight away to avoid garbage data. Variables may also be assigned data throughout their lifetime or scope unless it’s been declared a constant (More on that later). 
+
+```cpp
+number1 = -10;
+number2 = 2.345f;
+name = "Karsten";
+```
+
+We can also assign an existing variable to another, like so:
+
+```cpp
+firstNumber = anotherNumber;
+```
+
+Assignment chaining is also supported and allows us to assign different variables to each other: 
+
+```cpp
+number1 = number2 = number3 = number4;
+```
+
+Assignment chaining works from right to left, meaning the value of the variable on the right is assigned to all other variables. When assigning variables of different types to each other, a narrowing conversion may occur, just like when they are initialized. Again, a warning will appear to inform you of this potential problem, and we should always heed the warning before it becomes a runtime issue. 
+
+```cpp
+float floatNum = 10.234f;
+int number = floatNum;
+```
+
+To do this, we cast the variable into the data type we wish to store it as.
+
+```cpp
+number = (int)(floatNum);
+```
+
+However, if you can, prefer to use the modern style of typecasting, i.e., `static_cast<>` instead of the older C-style cast.
+
+```cpp
+number = static_cast<int>(floatNum);
+```
+
 
