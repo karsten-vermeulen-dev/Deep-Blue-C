@@ -21,3 +21,4 @@ Declaring multiple variables of the same type can be done in one line, like so:
 int number1, number2, number3;
 ```
 
+Variable types come in two forms, namely _fundamental data types_ and _object data types_. Variables can also be classified as _value types_ or _reference types_. Depending on where the variable is declared in the code, it is said to have a particular _scope_. A variable's value can be altered as and when needed during the program unless it is declared as a _constant_. More on all of this a little later on in the show.
