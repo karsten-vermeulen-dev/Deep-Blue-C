@@ -446,7 +446,158 @@ Days myDay = Days::Monday;
 Directions myDirection = Directions::North;
 ```
 
- 
-	
-	
+## Some very special keywords
 
+Before moving on to the next section of this lesson, we will end with some special C++ keywords that can be used with variables and their data types. 
+
+### `sizeof`
+This determines the size, in bytes, of the variable or data type used: 
+
+```cpp
+int number;
+
+//Determine size of variable
+sizeof(number);
+
+//Determine size of data type
+sizeof(int);
+```
+
+### `auto` 
+This keyword will allow the compiler to determine what data type best suits the variable. (More on this later).
+
+```cpp
+auto variable = "Jack"; //variable is a const char*
+auto variable = -2;     //variable is an int
+auto variable = 2.45;   //variable is a double
+```
+
+### `typedef`
+This allows you to substitute your own name in place of the data type’s name: 
+
+```cpp
+typedef unsigned long long VeryLong;
+VeryLong number = 100'000'000;
+```
+
+## Arrays
+
+These are a collection of variables of the same data type that form a single unit and are stored in contiguous areas of memory sequentially and ordered. In terms of dimension, arrays can be _one-dimensional_ or _multidimensional_ and come in two primary flavours, namely:
+
+### Static arrays
+These are fixed, and their sizes are determined at compile time and cannot be changed for the entirety of the running program.
+
+### Dynamic arrays
+More flexible than their static counterparts, the sizes of dynamic arrays can be altered during runtime.
+
+## One-dimensional arrays
+
+To declare an array of a particular type, we do this:
+
+```cpp
+int intNumbers[4];     //an array of 4 integers 
+char letters[500];     //an array of 500 characters
+float realNumbers[6];  //an array of 6 floats
+```
+
+Declaring an array works with constants and not with standard variables. The default values the compiler assigns to the array elements will be garbage values. Therefore, it is best to initialize the array.
+
+```cpp
+//initialize all elements to 0
+int intNumbers[4] = {};
+
+//initialize all elements to specific values
+float realNumbers[6] = { 0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f };
+
+//initialize only some of the elements
+char letters[500] = { 'a', 'b', 'c', 'd' };
+```
+
+We could also leave out the array length between the square brackets and let the compiler determine the size based on the initializer list:
+
+```cpp
+//an array of 3 elements
+int intNumbers[] = { 100, 200, 300 };
+```
+
+We could also make use of a constant to determine the size of the array, like so:
+
+```cpp
+const int arrayLength = 10;
+int myNumbers[arrayLength];
+```
+
+Arrays are zero-based, which means their indexes begin at element 0. To access an element of an array, use the index value between square brackets:
+
+```cpp
+float myNumber = realNumbers[4];
+```
+
+To assign a value to an array element, we do the same thing we did when we assigned a regular variable:
+
+```cpp
+realNumbers[0] = 0.1f;
+```
+
+Beware not to overstep the bounds of an array. Accessing an element that is out of bounds is known as a _buffer overflow_ or _fence-post error_ and will generate a runtime error.
+ 
+## Multidimensional arrays
+
+Arrays are not restricted to only one dimension. They can also be multidimensional, also known as an _array of arrays_. For instance, to create a 3x3 array, we do the following:
+
+```cpp
+int myArray[3][3];
+```
+
+The above declaration will create an array of three rows by three columns. Therefore, when initializing the array, we could do this:
+
+```cpp
+int myArray[3][3] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+```
+
+However, aesthetically, it might be better to use as many parentheses as possible to make the code more readable:
+
+```cpp
+int myArray[3][3] = { { 1, 2, 3}, { 4, 5, 6}, { 7, 8, 9} };
+```
+
+We can take our readability one step further and do this:
+
+```cpp
+int myArray[3][3] = { { 1, 2, 3},
+                      { 4, 5, 6},
+                      { 7, 8, 9} };
+```
+
+During declaration, you can leave out the size of one dimension if the leftmost one has been left out:
+
+```cpp
+int myArray[][3] = { { 1, 2, 3 }, { 4, 5, 6 } };
+int a3DArray[][2][2] = { 1, 2, 3, 4, 1, 2, 3, 4 };
+```
+
+Looking at the first example, the compiler will know there are two rows because it can determine that after every three elements, a new row begins. Similarly, looking at the second example, a new dimension begins after two blocks of two components. To access a multidimensional array element, use the index values just as you would with one-dimensional arrays:
+
+```cpp
+//Assigning a value to an array element
+myArray[2][2] = 1000;
+
+//Accessing a value from an array
+int number = myArray[0][1];
+```
+
+Even though we find it easier to visualize multidimensional arrays as a kind of matrix or seating arrangement, in memory, it is all stored as one single array in one contiguous block. 
+You can create as many dimensions as you desire for an array. However, going beyond two dimensions will become more challenging to control and visualize.
+ 
+## Character arrays
+
+This array of _char_ values stores characters to make up a string, also known as a _C-style string_. They require a _terminating null character_ (\0) to be inserted at the end of the array.
+
+```cpp
+char sayHello[] = { 'H', 'e', 'l', 'l', 'o', '\0' };
+```
+
+Many C-style functions exist that perform operations on C-style strings. They hail from the days of C and are cumbersome, causing errors if not used properly. As such, and if at all possible, they are best avoided within a C++ environment unless you are working with a low-level library.
+
+## The new Array
+There is also an `std::array` object belonging to the _Standard Library_ that you should probably use often. There is nothing wrong with old C-style arrays, but this newer array has more features and is safer. More info on this is coming soon.
