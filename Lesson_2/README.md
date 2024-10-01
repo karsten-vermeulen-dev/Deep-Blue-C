@@ -22,3 +22,29 @@ int number1, number2, number3;
 ```
 
 Variable types come in two forms, namely _fundamental data types_ and _object data types_. Variables can also be classified as _value types_ or _reference types_. Depending on where the variable is declared in the code, it is said to have a particular _scope_. A variable's value can be altered as and when needed during the program unless it is declared as a _constant_. More on all of this a little later on in the show.
+
+## Initializing variables
+
+When declared, variables will initially contain random values or garbage data based on their type. Initializing a variable as soon as it is declared is always good practice.
+
+```cpp
+int age = 100;
+char letter = 'k';
+double velocity = 24.5;
+```
+
+You can also declare and initialize variables in one single line, like so:
+
+```cpp
+int number1 = 10, number2 = 20, number3 = 30;
+```
+
+Furthermore, we can initialize variables using existing variables, like so:
+
+```cpp
+int number1 = 1000;
+int number2 = number1;
+int number3(number2);
+```
+
+
