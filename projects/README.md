@@ -9,3 +9,6 @@ A cinema seating booking system.
 
 ## Algorithms
 A few examples demonstrating how we can use Lambdas and STL functions to perform small tasks (WIP)
+
+## Calendar
+An application that allows you to create a specific date and manipulate it using various operator overloads.  
