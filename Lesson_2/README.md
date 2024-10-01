@@ -47,4 +47,34 @@ int number2 = number1;
 int number3(number2);
 ```
 
+## Brace wars
+
+While the above method of initializing is not wrong, a more modern approach would be to use _brace initialization_:
+
+```cpp
+int age {100};
+char letter {'k'};
+double velocity {24.5};
+int number1{ 10 }, number2{ 20 }, number3{ 30 };
+int number1{ 1000 };
+int number2{ number1 };
+int number3{ number2 };
+```
+
+The wonderful thing about brace initialization is that the compiler will scream at you if you accidentally cause a _narrowing conversion_, which might occur if the data types differ. Consider the following:
+
+```cpp
+float floatNum = 10.234f;
+int intNum = floatNum; 
+```
+
+What happens above is that the **.234** portion of the number is lost, assigning the whole number **10** to `intNum`. While this is not serious and will only yield a warning, it might create runtime bugs later down the line that might be hard to track down. Instead, we can use _brace initialization_ that will produce a compiler error and explicitly remind us that we are making a conversion:
+
+```cpp
+float floatNum{ 10.234f };
+int intNum{ floatNum }; 
+```
+
+Brace initialization may also be termed _list_ or _uniform initialization_ and may not always be your desired solution. There are various (sometimes heated) discussions online about when, where, how, and why to use them. If you choose braces, stay consistent in your codebase unless it cannot be used in a particular situation. We will revert to **not** using brace initialization for the remainder of the lesson material.
+
 
