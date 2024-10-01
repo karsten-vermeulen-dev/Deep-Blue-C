@@ -1,4 +1,4 @@
-# Lesson 1: Getting to know your environment
+# Lesson 1: _Getting to know your environment_
 
 You are probably eager to start coding, but let's spend some time learning about C++. We will begin by looking at what C++ is, why we should care about it, and who on earth uses it. 
 
