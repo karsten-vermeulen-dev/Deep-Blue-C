@@ -132,15 +132,32 @@ So far, we have been demonstrating straightforward data types, also known as _fu
 
 The above intrinsic data types may also be declared using type modifiers, which further specify how large or small that variable is or if the variable can also store positive and negative numbers. For instance, a `long long int` may use up more storage than a `short int` and thus may be assigned more values. An `unsigned int` cannot hold any negative numbers. See the table below to view them:
 
-| Data type   | Description    |
+| Modifier    | Description    |
 | ----------- | -------------- |
 | long        | Works only with int, float and double data types to increase the range of values they can store   |
 | short       | Works only with int types and decreases the range of values they can store                        |
 | signed      | Works only with int and char types and allows them to represent positive and negative numbers     |
 | unsigned    | Works only with int and char types and restricts them to only representing positive numbers       |
 
-	
-	
+For those of you who are curious as to how much storage each of these variables requires, as well as what range of values each variable can store, see the comprehensive table below:
+
+
+| Data type               | Size      | Range                                                   |
+| ----------------------- | --------- | ------------------------------------------------------- |
+| bool                    | 1 byte  | true or false                                             |
+| char                    | 1 byte  | -128 to 127                                               |
+| unsigned char	          | 1 byte  | 0 to 255                                                  |
+| float                   | 4 bytes | -3.4e±38 to 3.4e±38 (7-digit accuracy)                    |
+| double	          | 8 bytes | -1.7e±308 to 1.7e±308 (15-digit accuracy)                 |
+| int                     | 4 bytes | -2,147,483,648 to 2,147,483,647                           |
+| unsigned int            | 4 bytes |	0 to 4,294,967,295                                      |
+| short int	          | 2 bytes | -32768 to 32767                                           |
+| unsigned short int      | 2 bytes | 0 to 65535                                                |
+| long int	          | 4 bytes | -2,147,483,648 to 2,147,483,647                           |
+| unsigned long int       | 4 bytes | 0 to 4,294,967,295                                        |
+| long long int	          | 8 bytes | -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807   |
+| unsigned long long int  | 8 bytes | 0 to 18,446,744,073,709,551,615                           |
+
 	
 	
  
