@@ -161,7 +161,29 @@ For those of you who are curious as to how much storage each of these variables 
 | long long int	          | 8 bytes | -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807   |
 | unsigned long long int  | 8 bytes | 0 to 18,446,744,073,709,551,615                           |
 
-	
+## Wrapping numbers
+More info on this topic coming soon...
+
+## Object data types
+These data types are external to the built-in C++ types that come with the language. They can also be types you created yourself, such as a _struct_ or a _class_:
+
+```cpp
+class ClassType
+{
+    //definition...
+};
+
+struct StructType
+{
+    //definition...
+};
+
+ClassType myOwnClass;
+StructType myOwnStruct;
+```
+
+Object types can also be data types that belong to an external library, such as the _Standard Library_, a popular example being the _std::string_ data type. Other types include _vectors_, _fstream_, _maps_, etc, which we will delve into later. With object types, we can usually perform operations on them, such as finding the length of a _std::string_ by using its `size()` member function. 
+
 	
  
 	
