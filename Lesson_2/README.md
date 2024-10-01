@@ -118,4 +118,33 @@ However, if you can, prefer to use the modern style of typecasting, i.e., `stati
 number = static_cast<int>(floatNum);
 ```
 
+## Fundamental data types
+
+So far, we have been demonstrating straightforward data types, also known as _fundamental data types_, and these are built into the C++ language. Also known as _built-in_ or _intrinsic types_, they include the following:
+
+| Data type   | Description    |
+| ----------- | -------------- |
+| int         | Stands for integer and is a whole number such as 1, 900 or -23                      |
+| float       | This is a floating-point or real number that contains decimal values                |
+| double      | This is also a real number with double the precision of a _float_ type              |
+| bool        | This holds two types of values, namely true or false                                |
+| char        | This contains only a single character or single digit number, such as A, x, 0 or 9  |
+
+The above intrinsic data types may also be declared using type modifiers, which further specify how large or small that variable is or if the variable can also store positive and negative numbers. For instance, a `long long int` may use up more storage than a `short int` and thus may be assigned more values. An `unsigned int` cannot hold any negative numbers. See the table below to view them:
+
+| Data type   | Description    |
+| ----------- | -------------- |
+| long        | Works only with int, float and double data types to increase the range of values they can store   |
+| short       | Works only with int types and decreases the range of values they can store                        |
+| signed      | Works only with int and char types and allows them to represent positive and negative numbers     |
+| unsigned    | Works only with int and char types and restricts them to only representing positive numbers       |
+
+	
+	
+	
+	
+ 
+	
+	
+	
 
