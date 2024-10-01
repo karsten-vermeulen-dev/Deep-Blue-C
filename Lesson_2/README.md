@@ -276,7 +276,27 @@ std::cout << "My full name is " << fullName << std::endl;
 
 The `getline()` function uses the `std::cin` stream object and the variable to store the string in, which in this case is `fullName`.
 	
- 
+## Value types
+
+Value types are variables that store the actual value in their memory location. These types of variables are created on the _stack_, and this is known as _static memory allocation_:
+
+```cpp
+int number;
+float anotherNumber;
+ClassType myOwnClass;
+```
+
+## Reference types
+
+Reference types are variables, also known as _pointers_, that store the _address of other variables_, thereby referencing these variables and the data they store. These variables usually point to data created on the _heap_, and this is known as _dynamic memory allocation_:
+
+```cpp
+int* number = new int;
+ClassType* myOwnClass = &otherClass;
+std::unique_ptr<SomeType> smartPtr(new SomeType);
+```
+
+
 	
 	
 	
